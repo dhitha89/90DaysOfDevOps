@@ -50,7 +50,6 @@ By the end of today, you should have:
 
 **Step 1: Update System**
 
-
 **Step 3: Install Nginx**
 
 **Verify Nginx is running:**
