@@ -9,7 +9,7 @@ Master file permissions and basic file operations in Linux.
 ---
 
 ## Expected Output
-- A markdown file: `day-10-file-permissions.md`
+- A markdown file: `<day-10-file-permissions.md>`
 - Screenshots showing permission changes
 
 ---
