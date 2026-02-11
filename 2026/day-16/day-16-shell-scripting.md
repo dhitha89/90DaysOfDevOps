@@ -47,14 +47,14 @@ Code:
 read -p "Enter your name: " NAME
 read -p "What is your favourite tool: " TOOL
 
-echo "Hello $Name, yOur favourite tool is $TOOL. Have a nice day :) "
+echo "Hello $NAME, yOur favourite tool is $TOOL. Have a nice day :) "
 
 Output:
 --------
 ➜  shellscript ./greet.sh
 Enter your name: Sharmila
 What is your favourite tool: Docker
-Hello , yOur favourite tool is Docker. Have a nice day :)
+Hello Sharmila, yOur favourite tool is Docker. Have a nice day :)
 
 __________________________________________________________________________________________________________
 
