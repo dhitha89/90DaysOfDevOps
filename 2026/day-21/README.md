@@ -111,6 +111,7 @@ Create a summary table like this at the top of your cheat sheet:
 
 ---
 
+
 ## Format Guidelines
 
 Your cheat sheet should be:
