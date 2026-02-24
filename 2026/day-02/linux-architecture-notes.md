@@ -49,6 +49,6 @@
 - heal -n file
 - gzip test.sql
 - gunzip file.gz
-- hostname
+- hostname[linux-architecture-notes.md](linux-architecture-notes.md)
 - whoami
 - date

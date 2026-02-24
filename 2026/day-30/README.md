@@ -61,9 +61,16 @@ Check `docker ps -a` after each step — observe the state changes.
 
 ### Task 5: Cleanup
 1. Stop all running containers in one command
+**docker stop $(docker ps -a -q)**
+
 2. Remove all stopped containers in one command
+**docker container prune**
+
 3. Remove unused images
+**docker images prune or docker rmi $(docker images -a)**
+
 4. Check how much disk space Docker is using
+**docker system df**
 
 ---
 
