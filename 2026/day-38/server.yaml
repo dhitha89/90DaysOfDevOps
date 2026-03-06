@@ -1,0 +1,24 @@
+# Task3
+server:
+  name: testserver
+  ip: 192.168.1.10
+  port: 8000
+
+database:
+  host: mariadb
+  name: myapp_db
+  credentials:
+    user: root
+    password: secret123
+
+# Task4
+server1:
+  startup_script1: |
+    echo "Starting server..."
+    sudo systemctl start nginx
+    echo "Server started..."
+
+  startup_script2: >
+    echo "Starting server..."
+    sudo systemctl start nginx
+    echo "Server started..."
