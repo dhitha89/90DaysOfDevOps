@@ -43,48 +43,23 @@ From memory, draw or describe the Kubernetes architecture. Your diagram should i
 
 After drawing, verify your understanding:
 - What happens when you run `kubectl apply -f pod.yaml`? Trace the request through each component.
-- What happens if the API server goes down?
-- What happens if a worker node goes down?
 
----
+- What happens if the API server goes down?
+
+- What happens if a worker node goes down?
+If the worker node goes down, the Controller Manager detects the failure. The Scheduler immediately assigns lost container to healthy nodes
+in the cluster to maintain application availability.
+
 
 ### Task 3: Install kubectl
 `kubectl` is the CLI tool you will use to talk to your Kubernetes cluster.
+➜  ~ kubectl version
+Client Version: v1.35.2
+Kustomize Version: v5.7.1
+Server Version: v1.35.1
 
-Install it:
-```bash
-# macOS
-brew install kubectl
-
-# Linux (amd64)
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-chmod +x kubectl
-sudo mv kubectl /usr/local/bin/
-
-# Windows (with chocolatey)
-choco install kubernetes-cli
-```
-
-Verify:
-```bash
-kubectl version --client
-```
-
----
 
 ### Task 4: Set Up Your Local Cluster
-Choose **one** of the following. Both give you a fully functional Kubernetes cluster on your machine.
-
-**Option A: kind (Kubernetes in Docker)**
-```bash
-# Install kind
-# macOS
-brew install kind
-
-# Linux
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
-chmod +x ./kind
-sudo mv ./kind /usr/local/bin/kind
 
 # Create a cluster
 kind create cluster --name devops-cluster
