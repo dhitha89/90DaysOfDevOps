@@ -2,7 +2,7 @@
 **1. Why was Kubernetes created? What problem does it solve that Docker alone cannot?**
 In 2014 Google had issues maintaining and autoscaling their applications . They also had to fix things manually incase of crash. 
 Hence they developed an internal system called BORG.
-Borg autoscales and autoheals the applications running on their server. It cant balance the traffic hitting the server. 
+Borg autoscales and autoheals the applications running on their server. It can balance the traffic hitting the server. 
 Docker can run only individual containers, but Kubernetes can orchestrate containerized docker applications at cluster scale.
 
 **2. Who created Kubernetes and what was it inspired by?**
@@ -87,7 +87,7 @@ Kind runs each node as container and entire cluster is just containers as compar
 
 # List all nodes
 **kubectl get nodes**
-AME                           STATUS   ROLES           AGE   VERSION
+NAME                           STATUS   ROLES           AGE   VERSION
 devops-cluster-control-plane   Ready    control-plane   16m   v1.35.0
 
 # Get detailed info about your node
@@ -141,7 +141,7 @@ Try these useful commands:```bash
 kind-devops-cluster
 
 # List all available contexts (clusters)
-**kubernetes kubectl config get-contexts**
+** kubectl config get-contexts**
 CURRENT   NAME                                                         CLUSTER                                                      AUTHINFO                                                     NAMESPACE
 arn:aws:eks:us-east-1:767398043281:cluster/aws_eks_cluster   arn:aws:eks:us-east-1:767398043281:cluster/aws_eks_cluster   arn:aws:eks:us-east-1:767398043281:cluster/aws_eks_cluster
 *         kind-devops-cluster                                          kind-devops-cluster                                          kind-devops-cluster              
