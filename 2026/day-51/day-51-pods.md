@@ -25,30 +25,30 @@ exit
 ### Task 2: Create a Custom Pod (BusyBox)
 # Write a new manifest `busybox-pod.yaml`
 # Apply and verify:
-kubectl apply -f busybox-pod.yaml
-kubectl get pods
-kubectl logs busybox-pod
+- kubectl apply -f busybox-pod.yaml
+- kubectl get pods
+- kubectl logs busybox-pod
 ![task2.png](task2.png)
 
 
 ### Task 3: Imperative vs Declarative
 **You have been using the declarative approach (writing YAML, then `kubectl apply`). Kubernetes also supports imperative commands:**
 # Create a pod without a YAML file
-kubectl run redis-pod --image=redis:latest
+- kubectl run redis-pod --image=redis:latest
 Now extract the YAML that Kubernetes generated:
-kubectl get pod redis-pod -o yaml
+- kubectl get pod redis-pod -o yaml
 ![task3_1.png](task3_1.png)
 
 # Check it
-kubectl get pods
+- kubectl get pods
 ![task3_2.png](task3_2.png)
 
 **You can also use dry-run to generate YAML without creating anything:**
-kubectl run test-pod --image=nginx --dry-run=client -o yaml
+- kubectl run test-pod --image=nginx --dry-run=client -o yaml
 ![task3_3.png](task3_3.png)
 
 save the output in file and compare its structure with your nginx-pod.yaml. What fields are the same? What is different?
-kubectl run test-pod --image=nginx --dry-run=client -o yaml > test-pod.yml
+- kubectl run test-pod --image=nginx --dry-run=client -o yaml > test-pod.yml
 
 diff -u nginx-pod.yml test-pod.yml
 # Similarity:
@@ -74,11 +74,11 @@ test-pod has:
 Before applying a manifest, you can validate it:
 
 # Check if the YAML is valid without actually creating the resource
-kubectl apply -f nginx-pod.yaml --dry-run=client
+- kubectl apply -f nginx-pod.yaml --dry-run=client
 **When to use : Just checking your YAML syntax quickly**
 
 # Validate against the cluster's API (server-side validation)
-kubectl apply -f nginx-pod.yaml --dry-run=server
+- kubectl apply -f nginx-pod.yaml --dry-run=server
 **When to use: Before applying to production — full check**
 
 | | `--dry-run=client` | `--dry-run=server` |
@@ -101,16 +101,16 @@ Eg: remove image name in the yml
 
 ### Task 5: Pod Labels and Filtering
 # List all pods with their labels
-kubectl get pods --show-labels
+- kubectl get pods --show-labels
 # Filter pods by label
-kubectl get pods -l app=nginx
-kubectl get pods -l environment=dev
+- kubectl get pods -l app=nginx
+- kubectl get pods -l environment=dev
 # Add a label to an existing pod
-kubectl label pod nginx-pod environment=production
+- kubectl label pod nginx-pod environment=production
 # Verify
-kubectl get pods --show-labels
+- kubectl get pods --show-labels
 # Remove a label
-kubectl label pod nginx-pod environment-
+- kubectl label pod nginx-pod environment-
 
 ![task5.png](task5.png)
 
@@ -121,12 +121,12 @@ Write a manifest for a third pod with at least 3 labels (app, environment, team)
 ### Task 6: Clean Up
 Delete all the pods you created:
 # Delete by name
-kubectl delete pod nginx-pod
-kubectl delete pod busybox-pod
-kubectl delete pod redis-pod
+- kubectl delete pod nginx-pod
+- kubectl delete pod busybox-pod
+- kubectl delete pod redis-pod
 # Or delete using the manifest file
-kubectl delete -f nginx-pod.yaml
+- kubectl delete -f nginx-pod.yaml
 # Verify everything is gone
-kubectl get pods
+- kubectl get pods
 
 ![task6.png](task6.png)

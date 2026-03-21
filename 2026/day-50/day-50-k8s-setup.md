@@ -141,7 +141,7 @@ Try these useful commands:```bash
 kind-devops-cluster
 
 # List all available contexts (clusters)
-** kubectl config get-contexts**
+**kubectl config get-contexts**
 CURRENT   NAME                                                         CLUSTER                                                      AUTHINFO                                                     NAMESPACE
 arn:aws:eks:us-east-1:767398043281:cluster/aws_eks_cluster   arn:aws:eks:us-east-1:767398043281:cluster/aws_eks_cluster   arn:aws:eks:us-east-1:767398043281:cluster/aws_eks_cluster
 *         kind-devops-cluster                                          kind-devops-cluster                                          kind-devops-cluster              
